@@ -9,5 +9,4 @@ It was visualised with css and modernised. <br>
 * Javascript 
 * JQuery 
 * CSS 
-* HTML 
 * Bootstrap 4
