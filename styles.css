@@ -1,0 +1,57 @@
+body{
+    margin-top: 50px;
+}
+
+.box {
+    width: 45px;
+    margin: 10px 5px;
+    border: 10px solid green;
+}
+
+.box2 {
+    width: 45px;
+    border: 10px solid red;
+    margin: 10px;
+}
+
+#progressbar {
+    background-color: black;
+    padding: 7px;
+  }
+  
+#msBox {
+    background-color: orange;
+    width: 0%; /* Adjust with JavaScript */
+    height: 5px;
+}
+
+#main{
+    border: 5px solid black;
+}
+
+#buttons{
+    margin: 20px 0 60px 0;
+}
+
+#recorder{
+    margin: auto;
+    width: 100%;
+    border: 3px solid green;
+    padding: 25px;
+    font-family: 'Gloria Hallelujah', cursive;
+    text-align: center;
+}
+
+@media (max-width: 623px) {
+    #recorder {
+        font-size: 2.3em;
+    }
+}
+
+@media (min-width: 630px) {
+    #recorder {font-size: 4em;}
+}
+
+@media (min-width: 858px) {
+    #recorder {font-size: 6em;}
+}
