@@ -1,6 +1,6 @@
 
 function Stopwatch(){
-    let minutes = 0; let seconds = 0; let milliseconds = 0;
+    let minutes = 0; let seconds = 0; let milliseconds = 0; minCheck = 0;
     let startTime, running, duration = 0;
     this.start = function(){
         if(running){
@@ -22,10 +22,19 @@ function Stopwatch(){
     }
 
     this.reset = function(){
+        if(running) {
+            this.stop();
+        }
         startTime = null;
         stopTime = null;
         running = false;
         duration = 0;
+        $('#min').html('00');
+        $('#sec').html('00');
+        $('#ms').html('00');
+        $('.box').removeClass('box2');
+        $('#msBox').css('width', 0 + '%'); 
+        $('#start-stop').html('START');
     }
 
     function update(){
@@ -35,8 +44,13 @@ function Stopwatch(){
         startTime = instantTime;
 
         milliseconds = parseInt((duration % 1000)/10);
-        seconds = parseInt(duration / 1000); 
-        minutes = parseInt(seconds/60);
+        seconds = parseInt(duration / 1000) % 60; 
+        minutes = parseInt(duration / 1000 / 60);
+        if(minCheck < minutes ) {
+            $('.box').removeClass('box2');
+        }
+        minCheck = minutes
+
         $('#min').html(checkDigits(minutes));
         $('#sec').html(checkDigits(seconds));
         $('#ms').html(checkDigits(milliseconds));
@@ -57,14 +71,24 @@ function Stopwatch(){
         }
     }
 
-    Object.defineProperty(this, 'duration', {
+    Object.defineProperty(this, 'running', {
         get(){
-            return duration;
+            return running;
         }
     });
 }
 
 const stopwatch = new Stopwatch();
 $('#start-stop').on('click', ()=>{
-    stopwatch.start();
+    if(!stopwatch.running){
+        stopwatch.start();
+        $('#start-stop').html('STOP');
+    } else {
+        stopwatch.stop();
+        $('#start-stop').html('START');
+    }
+})
+
+$('#reset').on('click', ()=>{
+    stopwatch.reset();
 })

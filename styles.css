@@ -1,32 +1,31 @@
 body{
     margin-top: 50px;
+    background-color: #0F3038;
+    color: bisque;
 }
 
 .box {
     width: 45px;
     margin: 10px 5px;
-    border: 10px solid green;
+    border: 10px solid #0F3038;
 }
 
 .box2 {
     width: 45px;
-    border: 10px solid red;
+    border: 10px solid #6FD7F2;
     margin: 10px;
 }
 
 #progressbar {
     background-color: black;
     padding: 7px;
+    margin-top: 25px;
   }
   
 #msBox {
     background-color: orange;
-    width: 0%; /* Adjust with JavaScript */
+    width: 0%;
     height: 5px;
-}
-
-#main{
-    border: 5px solid black;
 }
 
 #buttons{
@@ -36,22 +35,40 @@ body{
 #recorder{
     margin: auto;
     width: 100%;
-    border: 3px solid green;
     padding: 25px;
     font-family: 'Gloria Hallelujah', cursive;
     text-align: center;
 }
 
 @media (max-width: 623px) {
-    #recorder {
-        font-size: 2.3em;
-    }
+    #recorder {font-size: 2.3em;}
+    footer {margin: 25px 0 0 0;}
 }
 
 @media (min-width: 630px) {
     #recorder {font-size: 4em;}
+    footer {margin: 75px 0 0 0;}
 }
 
 @media (min-width: 858px) {
     #recorder {font-size: 6em;}
+    footer {margin: 75px 0 0 0;}
 }
+
+#icon_twitter, #icon_github {
+
+    border: 1px solid black;
+    border-radius: 50%;
+    float: right;
+    margin: 0px 4px;
+}
+
+footer {
+    color: white;
+	text-align: center;
+	bottom: 0;
+	width:100%;
+}
+
+
+
